@@ -83,8 +83,47 @@ h3 {
   margin-bottom: 5px;
 }
 h3 span {
-  color: rgb(0 209 255)
+  color: rgb(0 209 255);
 }
 p {
   margin: 0px;
+}
+
+.selectors {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.types-group {
+  max-width: fit-content;
+  display: flex;
+  flex-direction: row;
+}
+.selectors i {
+  margin: 0px;
+  min-width: 30px;
+  height: 30px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.selectors i + i{
+  margin: 0px;
+  margin-left: 5px;
+}
+.active {
+ color:white;
+ background: rgb(0 209 255);
+ cursor: not-allowed !important;
+}
+.submit {
+  background-color: #3ed0aa;
+  border-radius: 2px;
+  height: 20px;
+  padding: 5px 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }

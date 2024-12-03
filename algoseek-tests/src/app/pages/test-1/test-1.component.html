@@ -6,9 +6,18 @@
     <i class="ri-list-check"></i>
     
     <div class="content-container">
-      <textarea name="note" id="note" [placeholder]="'Add a note about ' + user + '...'"></textarea>
+      <textarea [(ngModel)]="note" name="note" id="note" [placeholder]="'Add a note about ' + user + '...'"></textarea>
+      <div class="selectors" *ngIf="note">
+        <div class="types-group">
+          <ng-container *ngFor="let item of types">
+            <i [class]="item.class" [class.active]="item.type === selectedType" (click)="handleClick(item.type)"></i>
+          </ng-container>
+        </div>
+        <div class="submit">Submit</div>
+      </div>
     </div>
   </div>
+
   <div class="list-item">
     <div class="days">45d</div>
     <i class="ri-chat-1-fill"></i>
@@ -18,28 +27,5 @@
       <p>Add more info there</p>
     </div>
   </div>
-  <div class="list-item">
-    <div class="days">45d</div>
-    <i class="ri-phone-fill"></i>
-    
-    <div class="content-container"></div>
-  </div>
-  <div class="list-item">
-    <div class="days">45d</div>
-    <i class="ri-cup-fill"></i>
-    
-    <div class="content-container"></div>
-  </div>
-  <div class="list-item">
-    <div class="days">45d</div>
-    <i class="ri-beer-fill"></i>
-    
-    <div class="content-container"></div>
-  </div>
-  <div class="list-item">
-    <div class="days">45d</div>
-    <i class="ri-user-fill"></i>
-    
-    <div class="content-container"></div>
-  </div>
+
 </div>
