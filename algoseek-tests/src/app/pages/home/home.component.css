@@ -1,0 +1,33 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 100dvw;
+}
+.main div {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100dvw;
+}
+.main button {
+  width: 33dvw;
+  min-height: 33dvh;
+  background: aliceblue;
+  font-size: 50px;
+}
+
+@media screen and (max-width: 959px) {
+  .main div {
+    flex-direction: column;
+    align-items: center;
+  }
+  .main button {
+    width: 90dvw;
+    min-height: 25dvh;
+  }
+  .main button + button {
+    margin-top: 20px;
+  }
+}
