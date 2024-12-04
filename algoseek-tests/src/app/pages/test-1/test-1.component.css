@@ -77,7 +77,27 @@ textarea:active, textarea:focus {
 }
 
 
-
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.header .ri-delete-bin-6-fill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  min-width: 25px;
+  min-height: 25px;
+  background: white;
+  color: palevioletred;
+  border-radius: 50%;
+}
+.header .ri-delete-bin-6-fill:hover {
+  background: rgb(0 209 255);
+  color: white;
+}
 h3 {
   margin-top: 0px;
   margin-bottom: 5px;

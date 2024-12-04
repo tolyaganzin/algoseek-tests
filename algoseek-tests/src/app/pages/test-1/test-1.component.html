@@ -13,18 +13,21 @@
             <i [class]="item.class" [class.active]="item.type === selectedType" (click)="handleClick(item.type)"></i>
           </ng-container>
         </div>
-        <div class="submit">Submit</div>
+        <div class="submit" (click)="submit()">Submit</div>
       </div>
     </div>
   </div>
 
-  <div class="list-item">
-    <div class="days">45d</div>
-    <i class="ri-chat-1-fill"></i>
+  <div class="list-item" *ngFor="let item of notes | sortByDate:'date'">
+    <div class="days">{{showDays(item.date)}}</div>
+    <i [class]="item.type.class"></i>
     
     <div class="content-container">
-      <h3><span>You</span> had a meating with <span>{{user}}</span></h3>
-      <p>Add more info there</p>
+      <div class="header">
+        <h3><span>You</span> had a meating with <span>{{user}}</span></h3>
+        <span class="ri-delete-bin-6-fill" (click)="delete(item.id)"></span>
+      </div>
+      <p>{{item.note}}</p>
     </div>
   </div>
 
