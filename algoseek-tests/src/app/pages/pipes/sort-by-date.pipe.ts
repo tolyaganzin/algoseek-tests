@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SortByDatePipe implements PipeTransform {//order from new to old
 
-  transform(items: any[], dateField: string = 'date'): any[] {
+  transform(items: any[], dateField: string = 'date'): any[] {// possible to improve for order type selection
     if (!items || items.length === 0) return items;
     
     // Sort the items by the given date field (default is 'date')

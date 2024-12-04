@@ -1,3 +1,4 @@
+/* side line and main container */
 .main {
   padding: 20px;
   position: relative;
@@ -11,6 +12,7 @@
   z-index: 0;
 }
 
+/* general item view */
 .list-item {
   display: flex;
   flex-direction: row;
@@ -56,6 +58,8 @@ i {
   min-width: calc(100% - 150px);
   max-width: calc(100% - 150px);
 }
+
+/* create note item */
 textarea {
   min-height: 20px;
   height: 20px;
@@ -75,40 +79,6 @@ textarea:active, textarea:focus {
   min-height: 18px;
   height: 18px;
 }
-
-
-.header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-.header .ri-delete-bin-6-fill {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  min-width: 25px;
-  min-height: 25px;
-  background: white;
-  color: palevioletred;
-  border-radius: 50%;
-}
-.header .ri-delete-bin-6-fill:hover {
-  background: rgb(0 209 255);
-  color: white;
-}
-h3 {
-  margin-top: 0px;
-  margin-bottom: 5px;
-}
-h3 span {
-  color: rgb(0 209 255);
-}
-p {
-  margin: 0px;
-}
-
 .selectors {
   margin-top: 10px;
   display: flex;
@@ -147,3 +117,39 @@ p {
   align-items: center;
   cursor: pointer;
 }
+
+
+/* static note item */
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.header .ri-delete-bin-6-fill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  min-width: 25px;
+  min-height: 25px;
+  background: white;
+  color: palevioletred;
+  border-radius: 50%;
+}
+.header .ri-delete-bin-6-fill:hover {
+  background: rgb(0 209 255);
+  color: white;
+}
+h3 {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+h3 span {
+  color: rgb(0 209 255);
+}
+p {
+  margin: 0px;
+}
+
+/* below can be adaptation for tablets and mobile */

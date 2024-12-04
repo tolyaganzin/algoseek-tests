@@ -3,6 +3,18 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SortByDatePipe } from '../pipes/sort-by-date.pipe';
 
+interface typeItem {
+  class: string, 
+  type: number
+}
+interface noteItem {
+  date: Date, 
+  type: typeItem, 
+  note: string, 
+  id: number, 
+  user: string
+}
+
 @Component({
   selector: 'app-test-1',
   standalone: true,
@@ -12,10 +24,10 @@ import { SortByDatePipe } from '../pipes/sort-by-date.pipe';
 })
 export class Test1Component implements OnInit {
   
-  user: string = "Milton Romaguera";
+  user: string = "Milton Romaguera"; // it can be input that get a user
+  // also can be separate component for create/edit note
   note: string = "";
-
-  types: {class: string, type: number}[] = [
+  types: typeItem[] = [
     {class: "ri-chat-1-fill", type: 0},
     {class: "ri-phone-fill", type: 1},
     {class: "ri-cup-fill", type: 2},
@@ -23,8 +35,8 @@ export class Test1Component implements OnInit {
     {class: "ri-user-fill", type: 4}
   ];
   selectedType: number = 0;
-
-  notes: {date: Date, type:{class: string, type: number}, note: string, id: number}[] = []
+  // --------
+  notes: noteItem[] = []
 
   // generate array of fake data on init component
   ngOnInit(): void {
@@ -34,7 +46,8 @@ export class Test1Component implements OnInit {
         date: new Date(new Date().setDate(new Date().getDate() - index - 2)),
         type: this.types[index],
         note: lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        id: this.getRandomInt()
+        id: this.getRandomInt(),
+        user: this.user
       });  
     }
   }
@@ -58,20 +71,23 @@ export class Test1Component implements OnInit {
   handleClick(type: number): void {
     this.selectedType = type;
   }
-  submit(): void {
-    // add to array 
+  // submit note
+  submit(): void { 
     let type = this.types.find(item => item.type === this.selectedType); //try to find type
     
+    // add to array 
     this.notes.push({
       date: new Date(new Date()), // date now
       type: type ? type : this.types[0], // if no type set default
       note: this.note,
-      id: this.getRandomInt()
+      id: this.getRandomInt(),
+      user: this.user
     })
     // trigger change detection. needed for pipe reorder
     this.notes = [...this.notes];
     this.note = "";
   } 
+  // remove note
   delete(id:number): void {// delete item by id
     this.notes = this.notes.filter(item => item.id !== id); // put all items that not id. also trigger detection changes
   }

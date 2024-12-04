@@ -1,6 +1,8 @@
 <div class="main">
+  <!-- side line -->
   <div class="line"></div>
 
+  <!-- create note  possible make it like a separate component-->
   <div class="list-item">
     <div class="days"></div>
     <i class="ri-list-check"></i>
@@ -18,17 +20,17 @@
     </div>
   </div>
 
+  <!-- note items list -->
   <div class="list-item" *ngFor="let item of notes | sortByDate:'date'">
     <div class="days">{{showDays(item.date)}}</div>
     <i [class]="item.type.class"></i>
     
     <div class="content-container">
       <div class="header">
-        <h3><span>You</span> had a meating with <span>{{user}}</span></h3>
+        <h3><span>You</span> had a meating with <span>{{item.user}}</span></h3>
         <span class="ri-delete-bin-6-fill" (click)="delete(item.id)"></span>
       </div>
       <p>{{item.note}}</p>
     </div>
   </div>
-
 </div>
