@@ -1,2 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'normalize.css';
+@import "@fontsource/lilita-one/index.css";
+@import "@fontsource/poppins/index.css";
+* {
+  outline-color: transparent !important;
+  outline-width: 0px !important;
+  outline-style: none !important;
+}
+html, body, app-root {
+  height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  width: 100%;
+  margin: 0px !important;
+}
+html {
+  overflow-x: hidden !important;
+}
+
+@media screen and (max-width: 959px) {
+  html, body {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+  body {
+    width: calc(100% - env(safe-area-inset-right) - env(safe-area-inset-left));
+    padding: env(safe-area-inset-top, 40px) env(safe-area-inset-right) 0 env(safe-area-inset-left);
+  }
+}

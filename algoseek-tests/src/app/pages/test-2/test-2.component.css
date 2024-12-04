@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-height: 100dvh;
+  overflow-y: auto;
 }
 .header {
   position: fixed;
@@ -12,9 +14,9 @@
   justify-content: center;
   background: linear-gradient(135deg, rgba(108, 92, 231, 0.298039) 0%, rgba(162, 155, 254, 0.298039) 100%);
   height: 180px;
-  width: 100%;
+  width: 100dvw;
 
-  font-family: Lilita One;
+  font-family: "Lilita One";
   font-size: 50px;
   font-weight: 400;
   line-height: 57.15px;
@@ -24,7 +26,7 @@
   color: rgba(255, 180, 0, 1);
 }
 .header span, .header span a {
-  font-family: Lilita One;
+  font-family: "Lilita One";
   font-size: 50px;
   font-weight: 400;
   line-height: 57.15px;
@@ -46,7 +48,7 @@
 
 .section1 {
   min-width: fit-content;
-  width: 100%;
+  width: 100dvw;
   height: 1040px;
   background-image: url('/fundo.png');
   background-size: cover; background-position: center;
@@ -61,7 +63,7 @@
   flex-direction: column;
 }
 .section1 h1 {
-  font-family: Lilita One;
+  font-family: "Lilita One";
   font-size: 100px;
   font-weight: 400;
   line-height: 114.3px;
@@ -78,9 +80,12 @@
   margin-left: 40px;
 }
 
+.description-container {
+  margin-top: 61px;
+}
 .description {
   color: rgba(108, 92, 231, 1);
-  font-family: Lilita One;
+  font-family: "Lilita One";
   font-size: 50px;
   font-weight: 400;
   line-height: 57.15px;
@@ -99,7 +104,7 @@
   align-items: center;
 }
 .section2 h3 {
-  font-family: Lilita One;
+  font-family: "Lilita One";
   font-size: 60px;
   font-weight: 400;
   line-height: 68.58px;
@@ -126,7 +131,7 @@ input + input {
 }
 .section2 p {
   margin-top: 46px;
-  font-family: Poppins;
+  font-family: "Poppins";
   font-size: 40px;
   font-weight: 300;
   line-height: 60px;
@@ -146,11 +151,120 @@ input + input {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  font-family: "Poppins";
+  font-weight: 500;
 }
 
-footer {
-  width: 100%;
-  background-image: url('/Footer.png');
+.footer {
+  width: 100dvw;
+  background-image: url('/footer.png');
   background-size: cover; background-position: center;
-  height: 240px;
+  min-height: 240px;
+}
+.footer span {
+  visibility: hidden;
+}
+
+@media screen and (max-width: 599px) {
+  /* Styles for screens with a width of 360px or smaller (e.g., small mobile devices) */
+  .header {
+    font-size: 18px;
+    height: 80px;
+  }
+  .header span, .header span a {
+    font-size: 18px;
+  }
+  .inner-container {
+    max-width: calc(100dvw - 90px);
+    padding: 0 45px;
+  }
+  .header span {
+    margin: 0px 10px;
+  }
+  .section1 {
+    height: 580px;
+    background: url('/fundo-mobile.png');
+    background-position: center;
+  }
+  .section1 .inner-container {
+    max-width: calc(100dvw - 90px);
+    padding-top: 80px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .section1 h1 {
+    font-size: 50px;
+    margin: 0px;
+    font-weight: 400;
+    line-height: 57px;
+    margin-bottom: 30px;
+  }
+  .section1 img {
+    max-width: 240px;
+    max-height: 240px;
+    top: 320px;
+    margin-left: 0px;
+    margin-top: 61px;
+  }
+
+  .description {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  .section2 {
+    padding: 61px 0px 90px;
+  }
+  .section2 h3 {
+    margin-top: 0px;
+    margin-bottom: 39px;
+    font-size: 30px;
+    line-height: 34px;
+  }
+  .section2 input {
+    width: 213px;
+    height: 34px;
+    font-size: 18px;
+  }
+  input + input {
+    margin-top: 11px;
+  }
+  .section2 p {
+    margin-top: 11px;
+    margin-bottom: 0px;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .button {
+    width: 160px;
+    height: 34px;
+    font-size: 18px;
+  }
+
+  .footer {
+    min-height: 106px;
+    background: url(/footer-mobile.png);
+    background-position: inherit;
+    background-size: cover;
+    position: relative;
+  }
+  .footer span {
+    position: absolute;
+    top: 51px;
+    left: 45px;
+    visibility: visible;
+    font-family: "Poppins";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: white;
+    width: 120px;
+    max-height: 50px;
+  }
 }
