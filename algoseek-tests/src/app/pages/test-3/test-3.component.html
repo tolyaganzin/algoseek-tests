@@ -1,1 +1,44 @@
-<p>test-3 works!</p>
+<div class="main">
+  <div class="nav-bar">
+    <img src="https://new.algoseek.com/fe-assets/logo_top_1.svg" alt="algoseek">
+
+    <ul class="menu">
+      <li>Data</li>
+      <li>Contacts</li> 
+      <li>Company</li>
+      <li>Company</li>
+    </ul>
+
+    <div class="button">
+      <img src="app.png" alt="app">
+      <div>Console</div>
+      <img src="arrow.png" alt="arrow">
+    </div>
+  </div>
+  <div>
+    <ngx-slick-carousel class="carousel" [config]="slideConfig">
+      @for (slide of sliderData; track slide) {
+        <div ngxSlickItem class="slide">
+            <p>{{slide.top}}</p>
+            <h1>{{slide.h1}}</h1>
+            <h1>Leave data to <span class="text-primary">algoseek.</span></h1>
+            <p class="text-darker-gray">Financial data, technology and services.</p>
+        </div>
+      }
+    </ngx-slick-carousel>
+  </div>
+  <div class="statistics">
+    <h4> Since our inception in 2015, we’ve been fusing advanced technology and financial data know-how to empower our clients worldwide to achieve business success. </h4>
+    <div class="statistics-container">
+      @for (item of statistics; track $index) {
+        <div class="statistics-item">
+          <p class="text-primary">{{item.header}}</p>
+          <div></div>
+          <h1>{{item.count}}</h1>
+          <h3>{{item.subHeader}}</h3>
+        </div>
+      }
+    </div>
+  </div>
+</div>
+<img class="talk-to-us" src="talk-to-us.png" alt="talk-to-us">

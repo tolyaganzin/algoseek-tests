@@ -2,6 +2,7 @@
 @import 'normalize.css';
 @import "@fontsource/lilita-one/index.css";
 @import "@fontsource/poppins/index.css";
+@import "@dannymichel/proxima-nova/index.css";
 * {
   outline-color: transparent !important;
   outline-width: 0px !important;
