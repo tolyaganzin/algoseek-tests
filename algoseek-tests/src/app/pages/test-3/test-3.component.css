@@ -109,7 +109,9 @@
   width: calc(100% - 240px);
   min-height: 310px;
   padding: 120px;
-  background: black;
+  background: url('/stats.png');
+  background-size: cover; 
+  background-position: center;
   color: white;
   display: flex;
   flex-direction: column;
