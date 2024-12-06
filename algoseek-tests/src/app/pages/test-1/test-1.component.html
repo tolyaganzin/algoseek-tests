@@ -9,28 +9,32 @@
     
     <div class="content-container">
       <textarea [(ngModel)]="note" name="note" id="note" [placeholder]="'Add a note about ' + user + '...'"></textarea>
-      <div class="selectors" *ngIf="note">
-        <div class="types-group">
-          <ng-container *ngFor="let item of types">
-            <i [class]="item.class" [class.active]="item.type === selectedType" (click)="handleClick(item.type)"></i>
-          </ng-container>
+      @if (note) {
+        <div class="selectors">
+          <div class="types-group">
+            @for (item of types; track $index) {
+              <i [class]="item.class" [class.active]="item.type === selectedType" (click)="handleClick(item.type)"></i>
+            }
+          </div>
+          <div class="submit" (click)="submit()">Submit</div>
         </div>
-        <div class="submit" (click)="submit()">Submit</div>
-      </div>
+      }
     </div>
   </div>
 
   <!-- note items list -->
-  <div class="list-item" *ngFor="let item of notes | sortByDate:'date'">
-    <div class="days">{{showDays(item.date)}}</div>
-    <i [class]="item.type.class"></i>
-    
-    <div class="content-container">
-      <div class="header">
-        <h3><span>You</span> had a meating with <span>{{item.user}}</span></h3>
-        <span class="ri-delete-bin-6-fill" (click)="delete(item.id)"></span>
+  @for(item of notes | sortByDate:'date'; track $index) {
+    <div class="list-item">
+      <div class="days">{{showDays(item.date)}}</div>
+      <i [class]="item.type.class"></i>
+      
+      <div class="content-container">
+        <div class="header">
+          <h3><span>You</span> had a meating with <span>{{item.user}}</span></h3>
+          <span class="ri-delete-bin-6-fill" (click)="delete(item.id)"></span>
+        </div>
+        <p>{{item.note}}</p>
       </div>
-      <p>{{item.note}}</p>
     </div>
-  </div>
+  }
 </div>
